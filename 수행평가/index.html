@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url('/mainimg.jpg');
+            background-size:cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        <br><br><br><br><br><br><br><br><br>
+    </h1>
+<script>
+
+    function Checkform() {
+        if( frm.strName.value == "" ) {
+    
+            frm.strName.focus();
+            alert("성명을 입력해 주십시오.");
+            return false;            
+        }
+
+    }    
+
+</script>
+
+<form name="frm" method="get" action="./choosemusic.html"  onSubmit="return Checkform()">
+
+    <table border="0" width="100%" height="100%" id="tmp_table">
+        <tr>
+            <td align="center">
+                이름 : <input type="text" name="strName" size="10" maxlength="10">
+            </td>
+        </tr>
+        <tr>
+            <td align="center"><button type="submit">시작하기</button></td>
+        </tr>
+    </table>
+
+</form>
+
+</body>
+</html>

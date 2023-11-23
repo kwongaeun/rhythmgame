@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main2.css">
+</head>
+<body>
+<div  align="center">
+<img src="./로고.jpg" width="300">
+</div>
+<script>
+    function Request(){
+        var requestParam ="";
+        
+        //getParameter 펑션
+         this.getParameter = function(param){
+         //현재 주소를 decoding
+         var url = unescape(location.href);
+         //파라미터만 자르고, 다시 &그분자를 잘라서 배열에 넣는다.
+          var paramArr = (url.substring(url.indexOf("?")+1,url.length)).split("&");
+        
+          for(var i = 0 ; i < paramArr.length ; i++){
+            var temp = paramArr[i].split("="); //파라미터 변수명을 담음
+        
+            if(temp[0].toUpperCase() == param.toUpperCase()){
+              // 변수명과 일치할 경우 데이터 삽입
+              requestParam = paramArr[i].split("=")[1];
+              break;
+            }
+          }
+          return requestParam;
+        }
+       }
+
+    var request = new Request();
+    // test 라는 파라메터 값을 얻기
+    var tmp_strName = request.getParameter("strName");
+
+    document.write("<center>");
+    document.write("반갑습니다.<br>");
+    document.write(tmp_strName);
+    document.write("님,<br>노래를 선택해주세요");
+    document.write("</center>");
+</script>
+
+
+
+<div class="tabs">
+    <div class="tab-buttons">
+        <button class="tab-button active" data-for="tab1">90's music</button>
+        <button class="tab-button" data-for="tab2">00's music</button>
+        <button class="tab-button" data-for="tab3">10's music</button>
+        <button class="tab-button" data-for="tab4">20's music</button>
+    </div>
+    <div class="tab-content">
+
+        
+
+        <div id="tab1" class="tab-pane active">
+            <div class='90' onclick='hello1()'>
+                <h5>Rock'N Roll - 김경호</h5>
+            </div>
+            <div class='90' onclick='hello2()'>
+                <h5>lonely night - 부활</h5>
+            </div>
+            <div class='90' onclick='hello3()'>
+                <h5>행복 - H.O.T</h5>
+            </div>
+            <div class='90' onclick='hello4()'>
+                <h5>와 - 이정현</h5>
+            </div>
+            <div class='90' onclick='hello5()'>
+                <h5>애상 - 쿨</h5>
+            </div>
+        </div>
+
+        <div id="tab2" class="tab-pane">
+
+            <div class='90' onclick='hello6()'>
+                <h5>U R Man - SS501</h5>
+            </div>
+            <div class='90' onclick='hello7()'>
+                <h5>Face - NU'EST</h5>
+            </div>
+            <div class='90' onclick='hello8()'>
+                <h5>우리집 - 2pm</h5>
+            </div>
+            <div class='90' onclick='hello9()'>
+                <h5>거짓말 - god</h5>
+            </div>
+            <div class='90' onclick='hello10()'>
+                <h5>내가 제일 잘 나가 - 2NE1</h5>
+            </div>
+        </div>
+
+        <div id="tab3" class="tab-pane">
+
+            <div class='90' onclick='hello11()'>
+                <h5>좋은 날 - 아이유</h5>
+            </div>
+            <div class='90' onclick='hello12()'>
+                <h5>에너제틱 - 워너원</h5>
+            </div>
+            <div class='90' onclick='hello13()'>
+                <h5>HER - 블락비</h5>
+            </div>
+            <div class='90' onclick='hello14()'>
+                <h5>후유증 - 제국의아이들</h5>
+            </div>
+            <div class='90' onclick='hello15()'>
+                <h5>LATATA - (여자)아이들</h5>
+            </div>
+        </div>
+
+        <div id="tab4" class="tab-pane">
+
+            <div class='90' onclick='hello16()'>
+                <h5>살짝 설렜어 - 오마이걸</h5>
+            </div>
+            <div class='90' onclick='hello17()'>
+                <h5>DUMB DUMB - 전소미</h5>
+            </div>
+            <div class='90' onclick='hello18()'>
+                <h5>사건의 지평선 - 윤하</h5>
+            </div>
+            <div class='90' onclick='hello19()'>
+                <<h5>AFTER LIKE - 아이브</h5>
+            </div>
+            <div class='90' onclick='hello20()'>
+                <h5>OMG - Newjeans</h5>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    
+    tabButtons.forEach(function(button) {
+        button.addEventListener('click', function(e) {
+            let tabId = this.getAttribute('data-for');
+            
+            // 모든 탭 버튼과 내용 비활성화
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-pane').forEach(tab => tab.classList.remove('active'));
+            
+            // 클릭한 탭 버튼과 내용만 활성화
+            this.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+});
+</script>
+
+<script>
+    function hello1()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game901.html"
+      }
+</script>
+
+<script>
+    function hello2()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game902.html"
+      }
+</script>
+
+<script>
+    function hello3()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game901.html"
+      }
+</script>
+
+<script>
+    function hello4()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game901.html"
+      }
+</script>
+
+<script>
+    function hello5()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game901.html"
+      }
+</script>
+
+
+<script>
+    function hello6()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game0001.html"
+      }
+</script>
+
+<script>
+    function hello7()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game0002.html"
+      }
+</script>
+
+<script>
+    function hello8()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game0003.html"
+      }
+</script>
+
+<script>
+    function hello9()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game0004.html"
+      }
+</script>
+
+<script>
+    function hello10()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game0005.html"
+      }
+</script>
+
+
+<script>
+    function hello11()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game1001.html"
+      }
+</script>
+
+<script>
+    function hello12()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game1002.html"
+      }
+</script>
+
+<script>
+    function hello13()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game1003.html"
+      }
+</script>
+
+<script>
+    function hello14()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game1004.html"
+      }
+</script>
+
+<script>
+    function hello15()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2005.html"
+      }
+</script>
+
+<script>
+    function hello16()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2001.html"
+      }
+</script>
+
+<script>
+    function hello17()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2002.html"
+      }
+</script>
+
+<script>
+    function hello18()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2003.html"
+      }
+</script>
+
+<script>
+    function hello19()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2004.html"
+      }
+</script>
+
+<script>
+    function hello20()  {
+        alert('게임을 시작하시겠습니까?');
+        location.href="/game2005.html"
+      }
+</script>
+</body>
+</html>
